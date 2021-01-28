@@ -20,6 +20,7 @@ docker images
 
 #Run image
 docker run -p 80:80 course-management-api (use -p for detached)
+docker run --network=host -p 8080:8080 course-management-api (Will be able to connect to local database)
 
 #Check the list of conatiners
 docker container list
@@ -32,3 +33,9 @@ docker pull postgres:alpine
 
 #Run Postgres image
 docker run --name postgres-2 -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
+
+#Remove Docker image
+docker image rm  <image-id>
+
+#Remove Docker container
+docker rm <container-id>
